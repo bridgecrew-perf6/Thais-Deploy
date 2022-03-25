@@ -40,7 +40,7 @@ export default function Index() {
 				<h1 className="container display-2">
 					Cadastro Promoção{' '}
 					<span>
-						<img src="public/promo.png" width="60" height="60" />
+						<img src="/promo.png" width="60" height="60" />
 					</span>
 				</h1>
 			</header>

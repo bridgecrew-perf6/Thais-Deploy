@@ -16,7 +16,7 @@ function Header() {
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
 						<img
-							src="public/icone.png"
+							src="/icone.png"
 							alt=""
 							width="35"
 							height="50"
