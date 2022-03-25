@@ -35,52 +35,57 @@ export default function Index() {
   };
 
   return (
-    <>
-      <header className="header">
-        <h1 className="container display-2">Cadastro Promoção <span ><img src="../src/assets/promo.png" width="60" height="60"/></span></h1>
-      </header>
-      <div className="container p-5">
-        <Link to="/Promocoes-Create" className="btn btn-success btn-lg">
-          Criar Nova Promoção <span class="glyphicon glyphicon-saved"></span>
-        </Link>
-        <div className="table-responsive">
-          <table className="table table-hover table-sm table-colors">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Descrição</th>
-                <th>Desconto</th>
-          
-                <th>Editar/Deletar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {nomes.map((nome) => (
-                <tr className="text-white tr-hover" key={nome.id_promocao}>
-                  <td className="text-black">{nome.id_promocao}</td>
-                  <td className="text-black">{nome.descricao}</td>
-                  <td className="text-black">{nome.desconto}</td>
-                  <td>
-                    <Link
-                      to={`/Promocoes-Update/${nome.id_promocao}`}
-                      className="btn btn-warning btn-lg"
-                    >
-                      Editar
-                    </Link>
-                    <button
-                      className="btn btn-danger btn-lg"
-                      onClick={() => deletePromocao(nome.id_promocao)}
-                      style={{ marginLeft: "10px" }}
-                    >
-                      Deletar
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </>
-  );
+		<>
+			<header className="header">
+				<h1 className="container display-2">
+					Cadastro Promoção{' '}
+					<span>
+						<img src="public/promo.png" width="60" height="60" />
+					</span>
+				</h1>
+			</header>
+			<div className="container p-5">
+				<Link to="/Promocoes-Create" className="btn btn-success btn-lg">
+					Criar Nova Promoção <span class="glyphicon glyphicon-saved"></span>
+				</Link>
+				<div className="table-responsive">
+					<table className="table table-hover table-sm table-colors">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Descrição</th>
+								<th>Desconto</th>
+
+								<th>Editar/Deletar</th>
+							</tr>
+						</thead>
+						<tbody>
+							{nomes.map(nome => (
+								<tr className="text-white tr-hover" key={nome.id_promocao}>
+									<td className="text-black">{nome.id_promocao}</td>
+									<td className="text-black">{nome.descricao}</td>
+									<td className="text-black">{nome.desconto}</td>
+									<td>
+										<Link
+											to={`/Promocoes-Update/${nome.id_promocao}`}
+											className="btn btn-warning btn-lg"
+										>
+											Editar
+										</Link>
+										<button
+											className="btn btn-danger btn-lg"
+											onClick={() => deletePromocao(nome.id_promocao)}
+											style={{ marginLeft: '10px' }}
+										>
+											Deletar
+										</button>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</>
+	)
 }
